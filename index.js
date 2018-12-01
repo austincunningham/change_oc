@@ -9,5 +9,5 @@ prompt.message = colors.green('-->');
 prompt.delimiter = colors.green(':');
 
 
-//download_oc();
+download_oc;
 change_oc;

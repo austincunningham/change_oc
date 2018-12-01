@@ -4,9 +4,6 @@ const prompt = require('prompt');
 const colors = require('colors/safe');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
-const tarball = require('tarball-extract');
-const request = require('request');
-const fs = require('fs');
 
 let child;
 
@@ -38,5 +35,6 @@ function change_oc(){
     }
   });
 }
+
 module.export = change_oc;
 
