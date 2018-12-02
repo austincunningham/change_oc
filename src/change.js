@@ -4,6 +4,7 @@ const prompt = require('prompt');
 const colors = require('colors/safe');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
+const readlineSync = require('readline-sync');
 
 let child;
 
@@ -13,10 +14,9 @@ var change_oc=(function(){
   prompt.message = colors.green('-->');
   prompt.delimiter = colors.green(':');
 
-
-  console.log(colors.green('What version of oc do you wish to switch to ? \n - 3.7\n - 3.9\n - 3.10\n - 3.11\n'));
-  prompt.get(['version'], function (err, result) {
-    if (result.version != 3.7 && result.version !=  3.9 && result.version !=  3.10 && result.version !=  3.11){
+  console.log("================================= Change OC =======================================")
+  var version = readlineSync.question(colors.green('What version of oc do you wish to switch to ? \n - 3.7\n - 3.9\n - 3.10\n - 3.11\n'));
+    if (version != 3.7 && version !=  3.9 && version !=  3.10 && version !=  3.11){
         console.log("Version not present")
     } else {
       console.log("Command-line input received:");
@@ -33,7 +33,6 @@ var change_oc=(function(){
       })
       .catch(err);
     }
-  });
 })();
 
 module.export = change_oc;

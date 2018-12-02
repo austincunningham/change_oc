@@ -1,6 +1,5 @@
-
-const change_oc = require('./src/change');
 const download_oc = require('./src/download');
+const change_oc = require('./src/change');
 const prompt = require('prompt');
 const colors = require('colors/safe');
 
@@ -10,6 +9,5 @@ prompt.delimiter = colors.green(':');
 
 
 download_oc;
-
-
 change_oc;
+
