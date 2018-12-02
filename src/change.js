@@ -8,7 +8,7 @@ const exec = util.promisify(require('child_process').exec);
 let child;
 
 
-function change_oc(){
+var change_oc=(function(){
   prompt.start();
   prompt.message = colors.green('-->');
   prompt.delimiter = colors.green(':');
@@ -34,7 +34,7 @@ function change_oc(){
       .catch(err);
     }
   });
-}
+})();
 
 module.export = change_oc;
 
