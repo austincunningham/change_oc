@@ -52,7 +52,7 @@ var download_oc=(function(){
           timeout: 10000,
           followRedirect: true,
           maxRedirects: 10
-        }).pipe(fs.createWriteStream(result.version +".tar.gz"))
+        }).pipe(fs.createWriteStream(version +".tar.gz"))
         resolve('Hello, Promises!');
       });
       

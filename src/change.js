@@ -20,18 +20,18 @@ var change_oc=(function(){
         console.log("Version not present")
     } else {
       console.log("Command-line input received:");
-      console.log('Change to Version : ' + result.version);
+      console.log('Change to Version : ' + version);
       
-      exec("sudo rm /usr/local/bin/oc && sudo ln -s /opt/openshift/"+result.version+"/oc /usr/local/bin/oc")
+      exec("sudo rm /usr/local/bin/oc && sudo ln -s /opt/openshift/"+version+"/oc /usr/local/bin/oc")
       .then(changeToVersion => exec("oc version"))
       .then(newVersion => {
-        console.log("Change to Version: ", result);
+        console.log("Change to Version: ", version);
         console.log("New Version Number : ",newVersion.stdout);
         if (newVersion.stderr){
           return newVersion.stderr;
         }
       })
-      .catch(err);
+      .catch(Error)
     }
 })();
 

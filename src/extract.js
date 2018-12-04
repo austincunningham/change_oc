@@ -7,20 +7,23 @@ const tarball = require('tarball-extract');
 //const request = require('request');
 const fs = require('fs');
 
-
-fs.exists(result.version +".tar.gz",function(err){
-    if(err) {
-        console.log("file read error: "+err);
-    } else {
-    tarball.extractTarball(result.version+".tar.gz", result.version, function(err){
+var extract_oc=(function(){
+    console.log("================================= Extract OC =======================================")
+    fs.exists(version +".tar.gz",function(err){
         if(err) {
-        console.log("tarball error: "+err);
+            console.log("file read error: "+err);
         } else {
-        console.log("File extracted");
+            tarball.extractTarball(result.version+".tar.gz", result.version, function(err){
+                if(err) {
+                console.log("tarball error: "+err);
+                } else {
+                console.log("File extracted");
+                }
+            });
         }
     });
-}
-
+});
+module.exports = extract_oc;
 
         // var promise = new Promise(function(resolve,reject){
     //     request({
@@ -70,4 +73,3 @@ fs.exists(result.version +".tar.gz",function(err){
     //   }
     // })
     // ).catch(err);
-});
