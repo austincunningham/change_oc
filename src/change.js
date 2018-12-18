@@ -9,7 +9,7 @@ const readlineSync = require('readline-sync');
 let child;
 
 
-var change_oc=(function(){
+var change_oc = function(callback){
   prompt.start();
   prompt.message = colors.green('-->');
   prompt.delimiter = colors.green(':');
@@ -30,10 +30,14 @@ var change_oc=(function(){
         if (newVersion.stderr){
           return newVersion.stderr;
         }
+
+        if (typeof callback === 'function') {
+          callback();
+        }
       })
       .catch(Error)
     }
-})();
+};
 
 module.export = change_oc;
 

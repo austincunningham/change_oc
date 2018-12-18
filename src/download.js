@@ -19,12 +19,13 @@ prompt.delimiter = colors.green(':');
 // get the version number
 //
 
-var download_oc=(function(){
+var download_oc = function(callback){
   let url;
   console.log("================================= Download OC =======================================")
   let result = readlineSync.question(colors.blue("Do you wish to install an oc binary yes/no ?"));
   if (result == "yes" || result == "y"){
     let version = readlineSync.question(colors.blue('What version of oc do you wish to install ? \n - 3.7\n - 3.9\n - 3.10\n - 3.11\n'));
+    //module.exports = { version: version }
     switch(version) {
       case "3.7":
           url = "https://github.com/openshift/origin/releases/download/v3.7.2/openshift-origin-client-tools-v3.7.2-282e43f-linux-64bit.tar.gz"
@@ -44,7 +45,7 @@ var download_oc=(function(){
           break;
     }
     console.log ("url:",url)
-    if(url != "Not Present") {
+    if(url) {
       let promise = new Promise(function(resolve,reject){
           request({
           uri: url,
@@ -56,10 +57,12 @@ var download_oc=(function(){
         resolve('Hello, Promises!');
       });
       
-      return result.version;
+      if (typeof callback === 'function') {
+        callback();
+      }
     }     
   }  
-})();
+};
 
 module.exports = download_oc;
 

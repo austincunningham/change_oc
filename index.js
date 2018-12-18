@@ -9,7 +9,11 @@ prompt.message = colors.green('-->');
 prompt.delimiter = colors.green(':');
 
 
-download_oc;
-extract_oc;
-change_oc;
+download_oc(function(){
+    extract_oc(function(){
+        // change_oc(function(){
+        //     console.log('Version changed');
+        // });
+    });
+});
 
