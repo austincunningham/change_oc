@@ -16,6 +16,8 @@ prompt.delimiter = colors.green(':');
 // get the version number
 //
 
+exec("./scripts/download-extract.sh")
+
 console.log(colors.green('What version of oc do you wish to switch to ? \n - 3.7\n - 3.9\n - 3.10\n - 3.11\n'));
 prompt.get(['version'], function (err, result) {
   if (result.version != 3.7 && result.version !=  3.9 && result.version !=  3.10 && result.version !=  3.11){
