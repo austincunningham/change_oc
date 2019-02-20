@@ -2,7 +2,7 @@
 const prompt = require('prompt');
 const colors = require('colors/safe');
 const util = require('util');
-const exec = util.promisify(require('child_process').exec);
+//const exec = require(sync-exec);
 const request = require('request');
 const fs = require('fs');
 const readlineSync = require('readline-sync');
@@ -44,22 +44,19 @@ var download_oc = function(callback){
           console.log("No binary present");
           break;
     }
-    console.log ("url:",url)
     if(url) {
-      let promise = new Promise(function(resolve,reject){
-          request({
+      var req = request({
           uri: url,
           method: "GET",
           timeout: 10000,
           followRedirect: true,
           maxRedirects: 10
         }).pipe(fs.createWriteStream(version +".tar.gz"))
-        resolve('Hello, Promises!');
-      });
-      
-      if (typeof callback === 'function') {
-        callback();
-      }
+      req.on('close', function(){
+        console.log('request finished writing to file');
+        
+      });  
+        
     }     
   }  
 };
