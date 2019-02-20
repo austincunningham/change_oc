@@ -6,6 +6,7 @@ const util = require('util');
 const request = require('request');
 const fs = require('fs');
 const readlineSync = require('readline-sync');
+const extract_oc = require('./extract');
 
 
 let child;
@@ -53,8 +54,10 @@ var download_oc = function(callback){
           maxRedirects: 10
         }).pipe(fs.createWriteStream(version +".tar.gz"))
       req.on('close', function(){
-        console.log('request finished writing to file');
-        
+        console.log('Request finished writing to file');
+        extract_oc(function(){
+          console.log('Extract completed');
+        });
       });  
         
     }     

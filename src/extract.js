@@ -16,7 +16,7 @@ var extract_oc = function (callback){
             console.log("file read error: "+err);
         } else {
             tarball.extractTarball(version+".tar.gz", version, function(error){
-                console.log("don i get here")
+                console.log("do i get here")
                 if(error) {
                 console.log("tarball error: "+error);
                 } else {

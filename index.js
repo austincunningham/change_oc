@@ -1,5 +1,5 @@
 const download_oc = require('./src/download');
-const extract_oc = require('./src/extract');
+
 const change_oc = require('./src/change');
 const prompt = require('prompt');
 const colors = require('colors/safe');
