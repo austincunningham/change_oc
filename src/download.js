@@ -1,8 +1,6 @@
 'use strict';
 const prompt = require('prompt');
 const colors = require('colors/safe');
-const util = require('util');
-const exec = require('sync-exec');
 const request = require('request');
 const fs = require('fs');
 const readlineSync = require('readline-sync');
