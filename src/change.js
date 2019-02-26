@@ -1,15 +1,17 @@
 
-'use strict';
+//'use strict';
 const prompt = require('prompt');
 const colors = require('colors/safe');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 const readlineSync = require('readline-sync');
 
+
+
 let child;
 
 
-var change_oc = function(callback){
+var change = function(callback){
   prompt.start();
   prompt.message = colors.green('-->');
   prompt.delimiter = colors.green(':');
@@ -22,7 +24,7 @@ var change_oc = function(callback){
       console.log("Command-line input received:");
       console.log('Change to Version : ' + version);
       
-      exec("sudo rm /usr/local/bin/oc && sudo ln -s /opt/openshift/"+version+"/oc /usr/local/bin/oc")
+      exec("sudo rm /usr/local/bin/oc && sudo ln -s ./"+version+"/oc /usr/local/bin/oc")
       .then(changeToVersion => exec("oc version"))
       .then(newVersion => {
         console.log("Change to Version: ", version);
@@ -39,5 +41,5 @@ var change_oc = function(callback){
     }
 };
 
-module.export = change_oc;
+module.exports = change;
 

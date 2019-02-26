@@ -10,10 +10,5 @@ prompt.delimiter = colors.green(':');
 
 
 download_oc(function(){
-    extract_oc(function(){
-        // change_oc(function(){
-        //     console.log('Version changed');
-        // });
-    });
 });
 

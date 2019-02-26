@@ -61,7 +61,11 @@ var download_oc = function(callback){
       });  
         
     }     
-  }  
+  } else{ 
+    extract_oc(function(){
+          console.log('Extract completed');
+        });
+  }
 };
 
 module.exports = download_oc;
