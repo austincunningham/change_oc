@@ -12,9 +12,9 @@ const change = require('./change');
 const ocpath = "openshift-origin-client-tools-v";
 
 var extract_oc = function (callback){
-    let version = readlineSync.question(colors.blue('What version of oc do you wish to install ? \n - 3.7\n - 3.9\n - 3.10\n - 3.11\n'));
-    console.log("download version",version);
     console.log("================================= Extract OC =======================================")
+    let version = readlineSync.question(colors.cyan('What version of oc do you wish to install ? \n - 3.7\n - 3.9\n - 3.10\n - 3.11\n'));
+    console.log("download version",version);
     fs.exists("../"+version +".tar.gz",function(err){
         if(err) {
             console.log("file read error: "+err);
@@ -29,6 +29,7 @@ var extract_oc = function (callback){
                     var versionpath = './'+version+'/'+ocpath+version+'*/*'
                     exec('mv '+versionpath+' ./'+version);
                     exec('rm -rf '+'./'+version+'/'+ocpath+version+'*');
+                    exec('sudo mv ./'+ version +' /opt/openshift/'+ version)
                     console.log(change)
                     change(function(){
                         console.log('oc version changed to :' + version);
