@@ -5,6 +5,7 @@ const request = require('request');
 const fs = require('fs');
 const readlineSync = require('readline-sync');
 const extract_oc = require('./extract');
+const cliAnimation = require('chalk-animation');
 
 
 let child;
@@ -43,7 +44,10 @@ var download_oc = function(callback){
           console.log("No binary present");
           break;
     }
-    if(url) {
+    // if (fs.existsSync(version+".tar.gz")){
+    //   console.log("file exists")
+    // }
+    if(url && !(fs.existsSync(version+".tar.gz")) ) {
       var req = request({
           uri: url,
           method: "GET",
@@ -51,6 +55,11 @@ var download_oc = function(callback){
           followRedirect: true,
           maxRedirects: 10
         }).pipe(fs.createWriteStream(version +".tar.gz"))
+        // Add loading animation
+        const loading = cliAnimation.radar('==================================================================================>'); 
+        setTimeout(() => {
+            loading.stop(); // Animation stops
+        }, 250000);
       req.on('close', function(){
         console.log('Request finished writing to file');
         extract_oc(function(){
@@ -58,11 +67,17 @@ var download_oc = function(callback){
         });
       });  
         
-    }     
+    } else {
+      console.log('Binary Already Download');
+      extract_oc(function(){
+        console.log('Extract completed');
+      });
+    }  
   } else{ 
+    console.log('Skipping Binary Download');
     extract_oc(function(){
-          console.log('Extract completed');
-        });
+      console.log('Extract completed');
+    });
   }
 };
 

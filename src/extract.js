@@ -26,14 +26,22 @@ var extract_oc = function (callback){
                     console.log("File extracted");
                     
                     // move the files and remove the old directory
-                    var versionpath = './'+version+'/'+ocpath+version+'*/*'
-                    exec('mv '+versionpath+' ./'+version);
-                    exec('rm -rf '+'./'+version+'/'+ocpath+version+'*');
-                    exec('sudo mv ./'+ version +' /opt/openshift/'+ version)
-                    console.log(change)
-                    change(function(){
-                        console.log('oc version changed to :' + version);
-                    });
+                    if (!fs.existsSync('/opt/openshift/'+ version)){
+                        var versionpath = './'+version+'/'+ocpath+version+'*/*';
+                        exec('mv '+versionpath+' ./'+version);
+                        exec('rm -rf '+'./'+version+'/'+ocpath+version+'*');
+                        exec('sudo mv ./'+ version +' /opt/openshift/'+ version);
+                        console.log(change)
+                        change(function(){
+                            console.log('oc version changed to :' + version);
+                        });
+                    }else{
+                        console.log("/opt/openshift/"+version+' exists already');
+                        exec('rm -rf ./'+version);
+                        change(function(){
+                            console.log('oc version changed to :' + version);
+                        });
+                    }
                 }
             });
         }
