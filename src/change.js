@@ -18,9 +18,10 @@ var change = function(callback){
 
   console.log("================================= Change OC =======================================")
   var version = readlineSync.question(colors.green('What version of oc do you wish to switch to ? \n - 3.7\n - 3.9\n - 3.10\n - 3.11\n'));
-    if (version != 3.7 && version !=  3.9 && version !=  3.10 && version !=  3.11){
-        console.log("Version not present")
-    } else {
+  if (version != 3.7 && version !=  3.9 && version !=  3.10 && version !=  3.11){
+    console.log("Version not present");
+  } else {
+    if (!fs.existsSync("/opt/openshift/"+version)) {
       console.log("Command-line input received:");
       console.log('Change to Version : ' + version);
       
@@ -38,8 +39,11 @@ var change = function(callback){
         }
       })
       .catch(Error)
+    } else {
+      console.log("Binary version "+version+" not extracted");
     }
-};
+  }
+}
 
 module.exports = change;
 
