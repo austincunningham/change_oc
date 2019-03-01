@@ -5,7 +5,7 @@ const colors = require('colors/safe');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 const readlineSync = require('readline-sync');
-
+const fs = require('fs');
 
 
 let child;
@@ -21,7 +21,7 @@ var change = function(callback){
   if (version != 3.7 && version !=  3.9 && version !=  3.10 && version !=  3.11){
     console.log("Version not present");
   } else {
-    if (!fs.existsSync("/opt/openshift/"+version)) {
+    if (fs.existsSync("/opt/openshift/"+version)) {
       console.log("Command-line input received:");
       console.log('Change to Version : ' + version);
       
@@ -41,6 +41,7 @@ var change = function(callback){
       .catch(Error)
     } else {
       console.log("Binary version "+version+" not extracted");
+      return;
     }
   }
 }
