@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const download_oc = require('./src/download');
 
 const change_oc = require('./src/change');
