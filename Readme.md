@@ -47,5 +47,5 @@ From source run the npm start script and follow the onscrean instructions
 npm start
 ```
 
-[](./)
+![](./image/screenshot.gif)
 
