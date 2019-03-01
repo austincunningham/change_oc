@@ -1,6 +1,6 @@
 {
   "name": "change_oc",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "download and change oc version",
   "main": "index.js",
   "scripts": {
@@ -21,5 +21,14 @@
     "readline-sync": "^1.4.9",
     "request": "^2.88.0",
     "tarball-extract": "0.0.6"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/austincunningham/change_oc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/austincunningham/change_oc/issues"
+  },
+  "homepage": "https://github.com/austincunningham/change_oc#readme"
 }
