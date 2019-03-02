@@ -36,8 +36,8 @@ var download_oc = function(callback){
           break;
       case "3.10":
           // issue with this url using rc0 instead
-          //url = "https://github.com/openshift/origin/releases/download/v3.10.0/openshift-origin-client-tools-v3.10.0-dd10d17-linux-64bit.tar.gz"
-          url = "https://github.com/openshift/origin/releases/download/v3.10.0-rc.0/openshift-origin-server-v3.10.0-rc.0-c20e215-linux-64bit.tar.gz"
+          url = "https://github.com/openshift/origin/releases/download/v3.10.0/openshift-origin-client-tools-v3.10.0-dd10d17-linux-64bit.tar.gz"
+          //url = "https://github.com/openshift/origin/releases/download/v3.10.0-rc.0/openshift-origin-server-v3.10.0-rc.0-c20e215-linux-64bit.tar.gz"
           break;
       case "3.11":
           url = "https://github.com/openshift/origin/releases/download/v3.11.0/openshift-origin-client-tools-v3.11.0-0cbc58b-linux-64bit.tar.gz"
@@ -47,9 +47,7 @@ var download_oc = function(callback){
           console.log(colors.blue("No binary present"));
           break;
     }
-    // if (fs.existsSync(version+".tar.gz")){
-    //   console.log("file exists")
-    // }
+
     if(url && !(fs.existsSync(version+".tar.gz")) ) {
       var req = request({
           uri: url,
@@ -60,9 +58,6 @@ var download_oc = function(callback){
         }).pipe(fs.createWriteStream(version +".tar.gz"))
         // Add loading animation
         const loading = cliAnimation.radar('===================================================================================>'); 
-        setTimeout(() => {
-            loading.stop(); // Animation stops
-        }, 250000);
       req.on('close', function(){
         console.log(colors.blue('Request finished writing to file'));
         extract_oc(function(){

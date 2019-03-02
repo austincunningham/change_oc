@@ -34,14 +34,14 @@ var extract_oc = function (callback){
                         console.log(change)
                         change(function(){
                             console.log('oc version changed to :' + version);
-                            return;
+                            break;
                         });
                     }else{
                         console.log("/opt/openshift/"+version+' exists already');
                         exec('rm -rf ./'+version);
                         change(function(){
                             console.log('oc version changed to :' + version);
-                            return;
+                            break;
                         });
                     }
                 }
