@@ -12,9 +12,9 @@ const change = require('./change');
 const ocpath = "openshift-origin-client-tools-v";
 
 var extract_oc = function (callback){
-    console.log("================================= Extract OC =======================================")
-    let version = readlineSync.question(colors.cyan('What version of oc do you wish to install ? \n - 3.7\n - 3.9\n - 3.10\n - 3.11\n'));
-    console.log("download version",version);
+    console.log(colors.cyan("================================= Extract OC ======================================="))
+    console.log("download version: ",download_oc.version);
+    let version = download_oc.version;
     fs.exists("../"+version +".tar.gz",function(err){
         if(err) {
             console.log("file read error: "+err);

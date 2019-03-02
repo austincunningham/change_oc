@@ -1,6 +1,6 @@
-# Readme Change_oc
+# Change_oc
 
-Some command line tooling to download, extract and set the version of `oc` on the local system
+Some command line tooling to download, extract and set the version of `oc` on the local system. 
 
 Downloads the compressed oc binary to this module and extracts the various oc versions to the following locations
 ```

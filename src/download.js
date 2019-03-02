@@ -5,6 +5,7 @@ const request = require('request');
 const fs = require('fs');
 const readlineSync = require('readline-sync');
 const extract_oc = require('./extract');
+const change_oc = require('./change')
 const cliAnimation = require('chalk-animation');
 
 
@@ -21,11 +22,11 @@ prompt.delimiter = colors.green(':');
 
 var download_oc = function(callback){
   let url;
-  console.log("================================= Download OC =======================================")
-  let result = readlineSync.question(colors.blue("Do you wish to install an oc binary yes/no ?"));
+  console.log(colors.blue("================================= Download OC ======================================"))
+  let result = readlineSync.question(colors.blue("Do you wish to install an oc binary yes/no ? "));
   if (result == "yes" || result == "y"){
     let version = readlineSync.question(colors.blue('What version of oc do you wish to install ? \n - 3.7\n - 3.9\n - 3.10\n - 3.11\n'));
-    //module.exports = { version: version }
+    exports.version = version;
     switch(version) {
       case "3.7":
           url = "https://github.com/openshift/origin/releases/download/v3.7.2/openshift-origin-client-tools-v3.7.2-282e43f-linux-64bit.tar.gz"
@@ -43,7 +44,7 @@ var download_oc = function(callback){
           break;
       default:
           url = false;
-          console.log("No binary present");
+          console.log(colors.blue("No binary present"));
           break;
     }
     // if (fs.existsSync(version+".tar.gz")){
@@ -63,21 +64,21 @@ var download_oc = function(callback){
             loading.stop(); // Animation stops
         }, 250000);
       req.on('close', function(){
-        console.log('Request finished writing to file');
+        console.log(colors.blue('Request finished writing to file'));
         extract_oc(function(){
           console.log('Extract completed');
         });
       });  
         
     } else {
-      console.log('Binary Already Download');
+      console.log(colors.blue('Binary Already Download'));
       extract_oc(function(){
         console.log('Extract completed');
       });
     }  
   } else{ 
-    console.log('Skipping Binary Download');
-    extract_oc(function(){
+    console.log(colors.blue('Skipping Binary Download'));
+    change_oc(function(){
       console.log('Extract completed');
     });
   }
