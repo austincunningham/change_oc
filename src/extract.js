@@ -1,12 +1,9 @@
 'use strict';
-const prompt = require('prompt');
 const colors = require('colors/safe');
-const util = require('util');
 const exec = require('child_process').execSync;
 const tarball = require('tarball-extract');
 const fs = require('fs');
 const download_oc = require('./download');
-const readlineSync = require('readline-sync');
 const change = require('./change');
 
 const ocpath = "openshift-origin-client-tools-v";
@@ -34,14 +31,14 @@ var extract_oc = function (callback){
                         console.log(change)
                         change(function(){
                             console.log('oc version changed to :' + version);
-                            break;
+                            return;
                         });
                     }else{
                         console.log("/opt/openshift/"+version+' exists already');
                         exec('rm -rf ./'+version);
                         change(function(){
                             console.log('oc version changed to :' + version);
-                            break;
+                            return;
                         });
                     }
                 }
