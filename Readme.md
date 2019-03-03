@@ -46,6 +46,7 @@ From source run the npm start script and follow the onscrean instructions
 ``` bash
 npm start
 ```
-
-![](./image/screenshot.gif)
-
+### Download
+![](./image/download.gif)
+### Change binary
+![](./image/change.gif)
