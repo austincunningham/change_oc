@@ -1,6 +1,6 @@
 {
   "name": "change_oc",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "download and change oc version",
   "main": "index.js",
   "bin": {
@@ -12,7 +12,11 @@
   },
   "keywords": [
     "oc",
-    "change"
+    "change",
+    "cli",
+    "command line",
+    "openshift",
+    "tool"
   ],
   "author": "Austin Cunningham",
   "license": "ISC",

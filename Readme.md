@@ -39,7 +39,7 @@ npm install
 ## Usage
 From npm run the module
 ```
-npm change_oc
+change_oc
 ```
 
 From source run the npm start script and follow the onscrean instructions
