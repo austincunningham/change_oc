@@ -1,6 +1,5 @@
 ---
 
-layout: default
 ---
 
 # Change_oc
