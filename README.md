@@ -3,6 +3,7 @@
 ---
 
 # Change_oc
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 Some command line tooling to download, extract and set the version of `oc` on the local system. 
 
