@@ -25,7 +25,7 @@ var change = function(callback){
       console.log("Command-line input received:");
       console.log('Change to Version : ' + version);
       
-      exec("sudo touch /usr/bin/oc && sudo rm /usr/bin/oc && sudo ln -s /opt/openshift/"+version+"/oc /usr/bin/oc")
+      exec("sudo rm /usr/bin/oc && sudo ln -s /opt/openshift/"+version+"/oc /usr/bin/oc")
       .then(changeToVersion => exec("oc version"))
       .then(newVersion => {
         console.log("New Version Number : ",newVersion.stdout);
