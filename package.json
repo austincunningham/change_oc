@@ -1,6 +1,6 @@
 {
   "name": "change_oc",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "download and change oc version",
   "main": "index.js",
   "bin": {
@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "npm test",
-    "start": "node index.js"
+    "start": "node index.js",
+    "lint": "eslint"
   },
   "keywords": [
     "oc",
@@ -29,7 +30,11 @@
     "request": "^2.88.0",
     "tarball-extract": "0.0.6"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^5.15.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/austincunningham/change_oc.git"
