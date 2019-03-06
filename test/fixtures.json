@@ -1,0 +1,14 @@
+{
+    "validUrl":{
+        "url": ""
+    },
+    "invalidUrl":{
+        "url": ""
+    },
+    "versions":[
+        3.7,
+        3.9,
+        3.10,
+        3.11
+    ]
+}
