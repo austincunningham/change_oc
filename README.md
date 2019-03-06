@@ -4,7 +4,8 @@
 
 # Change_oc
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![Build Status](https://travis-ci.com/austincunningham/change_oc.svg?branch=master)](https://travis-ci.com/austincunningham/change_oc)
+[![Build Status](https://travis-ci.org/austincunningham/change_oc.svg?branch=master)](https://travis-ci.org/austincunningham/change_oc)
+
 
 
 Some command line tooling to download, extract and set the version of `oc` on the local system. 
