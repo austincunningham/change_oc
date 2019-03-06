@@ -2,8 +2,6 @@
 const { assert } = require('chai');
 const mock = require('mock-fs');
 const fixtures = require('./fixtures.json');
-const
-
 
 const { versions } = fixtures;
 
