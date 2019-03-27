@@ -20,9 +20,9 @@ if (!fs.existsSync('/usr/bin/oc')) {
   execsync('sudo touch /usr/bin/oc');
 }
 
-// Check to see if /opt/openshift exists
-if (!fs.existsSync('/opt/openshift')) {
-  execsync('sudo mkdir -p /opt/openshift/None_installed');
+// Check to see if /opt/openshift exists creates empty dir Installed
+if (!fs.existsSync('/opt/openshift/Installed')) {
+  execsync('sudo mkdir -p /opt/openshift/Installed');
 }
 
 function startprogram() {
@@ -36,7 +36,7 @@ function startprogram() {
     console.log(colors.yellow(stdout));
 
     if (stdout) {
-      execsync('sudo rm -rf /opt/openshift/None_installed');
+      execsync('sudo rm -rf /opt/openshift/Installed');
       download_oc(() => {
       });
     }
