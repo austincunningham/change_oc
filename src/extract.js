@@ -33,15 +33,11 @@ const extract_oc = function (callback) {
             exec(`${'rm -rf ./'}${version}/${ocpath}${version}*`);
             exec(`sudo mv ./${version} /opt/openshift/${version}`);
             console.log(change);
-            change(() => {
-              console.log(`oc version changed to :${version}`);
-            });
+            change();
           } else {
             console.log(`/opt/openshift/${version} exists already`);
             exec(`rm -rf ./${version}`);
-            change(() => {
-              console.log(`oc version changed to :${version}`);
-            });
+            change();
           }
         }
       });
