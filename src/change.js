@@ -1,6 +1,5 @@
 
 // 'use strict';
-const prompt = require('prompt');
 const colors = require('colors/safe');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
@@ -10,10 +9,6 @@ const fs = require('fs');
 
 // eslint-disable-next-line func-names
 function change(callback) {
-  prompt.start();
-  prompt.message = colors.green('-->');
-  prompt.delimiter = colors.green(':');
-
   console.log(colors.green('================================= Change OC ========================================'));
   const version = readlineSync.question(colors.green('What version of oc do you wish to switch to ? \n - 3.7\n - 3.9\n - 3.10\n - 3.11\n'));
   // eslint-disable-next-line eqeqeq

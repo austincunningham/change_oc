@@ -1,7 +1,4 @@
 /* eslint-disable camelcase */
-
-
-const prompt = require('prompt');
 const colors = require('colors/safe');
 const request = require('request');
 const fs = require('fs');
@@ -9,11 +6,6 @@ const readlineSync = require('readline-sync');
 const cliAnimation = require('chalk-animation');
 const extract_oc = require('./extract');
 const change_oc = require('./change');
-
-
-prompt.start();
-prompt.message = colors.green('-->');
-prompt.delimiter = colors.green(':');
 
 //
 // get the version number
