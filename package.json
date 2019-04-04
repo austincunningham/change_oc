@@ -1,6 +1,6 @@
 {
   "name": "change_oc",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "description": "download and change oc version",
   "main": "index.js",
   "bin": {
@@ -43,5 +43,5 @@
   "bugs": {
     "url": "https://github.com/austincunningham/change_oc/issues"
   },
-  "homepage": "https://austincunningham.github.io/change_oc/README.html"
+  "homepage": "http://change-oc.ddns.net"
 }
