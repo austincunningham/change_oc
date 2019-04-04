@@ -6,6 +6,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Build Status](https://travis-ci.org/austincunningham/change_oc.svg?branch=master)](https://travis-ci.org/austincunningham/change_oc)
 [![npm version](https://badge.fury.io/js/change_oc.svg)](https://badge.fury.io/js/change_oc)
+[![Known Vulnerabilities](https://snyk.io/test/github/austincunningham/change_oc/badge.svg)](https://snyk.io/test/github/austincunningham/change_oc)
 
 
 
