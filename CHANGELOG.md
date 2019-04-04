@@ -6,7 +6,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 Date YYYY-MM-DD
 
 ## [Unreleased]
-
+## [0.0.20] 2019-04-05
+- updated the url for home page 
 ## [0.0.19] 2019-04-04
 - Added a change log 
 ## [0.0.18] 2019-04-04
