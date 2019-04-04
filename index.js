@@ -1,16 +1,11 @@
 #!/usr/bin/env node
 
-const prompt = require('prompt');
 const colors = require('colors/safe');
 const { exec } = require('child_process');
 const execsync = require('child_process').execSync;
 const fs = require('fs');
 // eslint-disable-next-line camelcase
 const download_oc = require('./src/download');
-
-prompt.start();
-prompt.message = colors.green('-->');
-prompt.delimiter = colors.green(':');
 
 console.log(colors.yellow('======================== Check for OC Version Installed ============================='));
 console.log(colors.yellow('The folowing versions of oc are installed at /opt/openshift'));
