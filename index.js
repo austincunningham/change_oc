@@ -12,6 +12,7 @@ console.log(colors.yellow('The folowing versions of oc are installed at /opt/ope
 
 // Check to see if /usr/bin/oc exists
 if (!fs.existsSync('/usr/bin/oc')) {
+  execsync('sudo find /usr/bin/oc -type l -delete');
   execsync('sudo touch /usr/bin/oc');
 }
 
