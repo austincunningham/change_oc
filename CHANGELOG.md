@@ -3,9 +3,16 @@
 All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-Date YYYY-MM-DD
+
+Date format YYYY-MM-DD
 
 ## [Unreleased]
+
+## [0.0.22] 2019-04-07
+- fix for https://app.snyk.io/org/austincunningham/project/22a0c913-0d50-4134-bd97-6a56842c3232
+- remove package extract-tarball as was reporting security vulnerability
+- add .npmignore
+- remove node 6 from travis build
 ## [0.0.21] 2019-04-06
 - fix for issue https://github.com/austincunningham/change_oc/issues/26
 ## [0.0.20] 2019-04-05
@@ -13,7 +20,7 @@ Date YYYY-MM-DD
 ## [0.0.19] 2019-04-04
 - Added a change log 
 ## [0.0.18] 2019-04-04
-- Removed `prompt` package as wasn't being used and was reporting security vunrability 
+- Removed `prompt` package as wasn't being used and was reporting security vulnerability 
 ## [0.0.17] 2019-04-04
 - Added synk package security 
 ## [0.0.16] 2019-03-31

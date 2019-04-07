@@ -3,7 +3,6 @@
 
 const colors = require('colors/safe');
 const exec = require('child_process').execSync;
-const tarball = require('tarball-extract');
 const fs = require('fs');
 // eslint-disable-next-line camelcase
 const download_oc = require('./download');
@@ -20,27 +19,22 @@ const extract_oc = function (callback) {
     if (err) {
       console.log(`file read error: ${err}`);
     } else {
-      tarball.extractTarball(`${version}.tar.gz`, version, (error) => {
-        if (error) {
-          console.log(`tarball error: ${error}`);
-        } else {
-          console.log('File extracted');
+      exec(`mkdir ${version}`);
+      exec(`tar --warning=no-unknown-keyword -C ${version} -zxvf ${version}.tar.gz`);
 
-          // move the files and remove the old directory
-          if (!fs.existsSync(`/opt/openshift/${version}`)) {
-            const versionpath = `./${version}/${ocpath}${version}*/*`;
-            exec(`mv ${versionpath} ./${version}`);
-            exec(`${'rm -rf ./'}${version}/${ocpath}${version}*`);
-            exec(`sudo mv ./${version} /opt/openshift/${version}`);
-            console.log(change);
-            change();
-          } else {
-            console.log(`/opt/openshift/${version} exists already`);
-            exec(`rm -rf ./${version}`);
-            change();
-          }
-        }
-      });
+      // move the files and remove the old directory
+      if (!fs.existsSync(`/opt/openshift/${version}`)) {
+        const versionpath = `./${version}/${ocpath}${version}*/*`;
+        exec(`mv ${versionpath} ./${version}`);
+        exec(`${'rm -rf ./'}${version}/${ocpath}${version}*`);
+        exec(`sudo mv ./${version} /opt/openshift/${version}`);
+        console.log(change);
+        change();
+      } else {
+        console.log(`/opt/openshift/${version} exists already`);
+        exec(`rm -rf ./${version}`);
+        change();
+      }
     }
 
     if (typeof callback === 'function') {
