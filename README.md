@@ -20,6 +20,7 @@ Downloads the compressed oc binary to this module and extracts the various oc ve
        |_ 3.9
        |_ 3.10
        |_ 3.11
+       |_ 4.1
 ```
 
 Sets the oc binary to execute by symlinking
@@ -61,3 +62,16 @@ npm start
 ![](./image/download.gif)
 ### Change binary
 ![](./image/change.gif)
+
+## Release Steps
+- Make changes
+- If nessary update README.md
+- Update CHANGELOG.md
+- Squash commits to single commit
+- Commit the changes
+- Bump the version in the package.json
+- Remove package-lock.json and run `npm install`
+- Second commit for version bump
+- Merge changes from the PR
+- Pull upstream changes to master
+- Publish the changes `npm publish`

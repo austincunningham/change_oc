@@ -24,9 +24,13 @@ const extract_oc = function (callback) {
 
       // move the files and remove the old directory
       if (!fs.existsSync(`/opt/openshift/${version}`)) {
-        const versionpath = `./${version}/${ocpath}${version}*/*`;
-        exec(`mv ${versionpath} ./${version}`);
-        exec(`${'rm -rf ./'}${version}/${ocpath}${version}*`);
+        // as version 4.1 tar is not creating same directory structure
+        if (`${version}` !== '4.1') {
+          const versionpath = `./${version}/${ocpath}${version}*/*`;
+          exec(`mv ${versionpath} ./${version}`);
+          exec(`${'rm -rf ./'}${version}/${ocpath}${version}*`);
+        }
+        // move extracted directroy
         exec(`sudo mv ./${version} /opt/openshift/${version}`);
         console.log(change);
         change();
