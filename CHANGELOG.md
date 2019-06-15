@@ -8,6 +8,9 @@ Date format YYYY-MM-DD
 
 ## [Unreleased]
 
+## [0.0.23] 2019-06-15
+- Feature add oc 4.1
+- Update readme with release steps
 ## [0.0.22] 2019-04-07
 - fix for https://app.snyk.io/org/austincunningham/project/22a0c913-0d50-4134-bd97-6a56842c3232
 - remove package extract-tarball as was reporting security vulnerability

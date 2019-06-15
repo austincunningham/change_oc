@@ -10,9 +10,9 @@ const fs = require('fs');
 // eslint-disable-next-line func-names
 function change(callback) {
   console.log(colors.green('================================= Change OC ========================================'));
-  const version = readlineSync.question(colors.green('What version of oc do you wish to switch to ? \n - 3.7\n - 3.9\n - 3.10\n - 3.11\n'));
+  const version = readlineSync.question(colors.green('What version of oc do you wish to switch to ? \n - 3.7\n - 3.9\n - 3.10\n - 3.11\n - 4.1\n'));
   // eslint-disable-next-line eqeqeq
-  if (version != 3.7 && version != 3.9 && version != 3.10 && version != 3.11) {
+  if (version != 3.7 && version != 3.9 && version != 3.10 && version != 3.11 && version != 4.1) {
     console.log('Version not present');
   } else if (fs.existsSync(`/opt/openshift/${version}`)) {
     console.log('Command-line input received:');
