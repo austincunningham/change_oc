@@ -7,7 +7,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 Date format YYYY-MM-DD
 
 ## [Unreleased]
-
+## [0.0.24] 2019-07-02
+- Fix bug if missing symlink file
 ## [0.0.23] 2019-06-15
 - Feature add oc 4.1
 - Update readme with release steps
