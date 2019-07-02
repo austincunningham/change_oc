@@ -11,8 +11,7 @@ console.log(colors.yellow('======================== Check for OC Version Install
 console.log(colors.yellow('The folowing versions of oc are installed at /opt/openshift'));
 
 // Check to see if /usr/bin/oc exists
-if (!fs.existsSync('/usr/bin/oc')) {
-  execsync('sudo find /usr/bin/oc -type l -delete');
+if (execsync('test /usr/bin/oc')) {
   execsync('sudo touch /usr/bin/oc');
 }
 
