@@ -3,6 +3,10 @@
 ---
 
 # CHANGELOG
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![Build Status](https://travis-ci.org/austincunningham/change_oc.svg?branch=master)](https://travis-ci.org/austincunningham/change_oc)
+[![npm version](https://badge.fury.io/js/change_oc.svg)](https://badge.fury.io/js/change_oc)
+[![Known Vulnerabilities](https://snyk.io/test/github/austincunningham/change_oc/badge.svg)](https://snyk.io/test/github/austincunningham/change_oc)
 
 All notable changes to this project will be documented in this file.
 
@@ -43,7 +47,7 @@ Date format YYYY-MM-DD
 - fix for issue https://github.com/austincunningham/change_oc/issues/25
 ## [0.0.13]-[0.0.1]
 - here there be dragons
-```bash
+```
 ___________________________________________________
 @@@@@@@@@@@@@@@@@@@@@**^^""~~~"^@@^*@*@@**@@@@@@@@@
 @@@@@@@@@@@@@*^^'"~   , - ' '; ,@@b. '  -e@@@@@@@@@
