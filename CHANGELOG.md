@@ -7,6 +7,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 Date format YYYY-MM-DD
 
 ## [Unreleased]
+## [0.0.26] 2019-07-11
+- Add in missing package-lock.json
 ## [0.0.25] 2019-07-11
 - Fix bug 41, url for downloading 4.1 was no longer working updated to a new one
 ## [0.0.24] 2019-07-02
