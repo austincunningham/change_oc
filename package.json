@@ -1,6 +1,6 @@
 {
   "name": "change_oc",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "description": "download and change oc version",
   "main": "index.js",
   "bin": {
