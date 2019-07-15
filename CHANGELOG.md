@@ -16,6 +16,8 @@ Date format YYYY-MM-DD
 
 ## [Unreleased]
 - ...
+## [0.0.27] 2019-07-15
+- Fixed change script to show only what download and extracted as an option
 ## [0.0.26] 2019-07-11
 - Add in missing package-lock.json
 ## [0.0.25] 2019-07-11
