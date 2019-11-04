@@ -16,6 +16,8 @@ Date format YYYY-MM-DD
 
 ## [Unreleased]
 - ...
+## [0.0.28] 2019-11-04
+- Add 4.2 binary support
 ## [0.0.27] 2019-07-15
 - Fixed change script to show only what download and extracted as an option
 ## [0.0.26] 2019-07-11
