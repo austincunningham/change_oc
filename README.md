@@ -21,6 +21,7 @@ Downloads the compressed oc binary to this module and extracts the various oc ve
        |_ 3.10
        |_ 3.11
        |_ 4.1
+       |_ 4.2
 ```
 
 Sets the oc binary to execute by symlinking

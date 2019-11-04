@@ -7,6 +7,7 @@ const fs = require('fs');
 // eslint-disable-next-line camelcase
 const download_oc = require('./src/download');
 
+console.log('hello');
 console.log(colors.yellow('======================== Check for OC Version Installed ============================='));
 console.log(colors.yellow('The folowing versions of oc are installed at /opt/openshift'));
 
