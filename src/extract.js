@@ -25,7 +25,7 @@ const extract_oc = function (callback) {
       // move the files and remove the old directory
       if (!fs.existsSync(`/opt/openshift/${version}`)) {
         // as version 4x tar is not creating same directory structure
-        if (version !== '4.1' && version != '4.2') {
+        if (version !== '4.1' && version != '4.2' && version != '4.3') {
           const versionpath = `./${version}/${ocpath}${version}*/*`;
           exec(`mv ${versionpath} ./${version}`);
           exec(`${'rm -rf ./'}${version}/${ocpath}${version}*`);
