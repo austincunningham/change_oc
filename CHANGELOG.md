@@ -16,6 +16,8 @@ Date format YYYY-MM-DD
 
 ## [Unreleased]
 - ...
+## [0.0.30] 2020-10-09
+- Add 4.5 binary support
 ## [0.0.30] 2020-10-08
 - Add 4.4 binary support
 ## [0.0.29] 2020-02-21
