@@ -70,7 +70,7 @@ npm start
 
 ## Release Steps
 - Make changes
-- If nessary update README.md
+- If necessary update README.md
 - Update CHANGELOG.md
 - Squash commits to single commit
 - Commit the changes
