@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+process.env.UV_THREADPOOL_SIZE = 128;
 const colors = require('colors/safe');
 const { exec } = require('child_process');
 const execsync = require('child_process').execSync;
