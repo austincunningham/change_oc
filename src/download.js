@@ -47,9 +47,9 @@ function download_oc() {
       case '4.5':
         url = 'https://mirror.openshift.com/pub/openshift-v4/clients/oc/4.5/linux/oc.tar.gz';
         break;
-        case '4.6':
-          url = 'https://mirror.openshift.com/pub/openshift-v4/clients/oc/4.6/linux/oc.tar.gz';
-          break;
+      case '4.6':
+        url = 'https://mirror.openshift.com/pub/openshift-v4/clients/oc/4.6/linux/oc.tar.gz';
+        break;
       default:
         url = false;
         console.log(colors.blue('No binary present'));
