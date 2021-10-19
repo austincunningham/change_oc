@@ -19,7 +19,20 @@ function change(callback) {
       console.log(colors.green(stdout));
       const version = readlineSync.question(colors.green('What version of oc do you wish to switch to ?'));
       // eslint-disable-next-line eqeqeq
-      if (version != 3.7 && version != 3.9 && version != 3.10 && version != 3.11 && version != 4.1 && version != 4.2 && version != 4.3 && version != 4.4 && version != 4.5 && version != 4.6) {
+      if (
+         version != 3.7 && 
+         version != 3.9 &&
+         version != 3.10 &&
+         version != 3.11 && 
+         version != 4.1 && 
+         version != 4.2 && 
+         version != 4.3 && 
+         version != 4.4 && 
+         version != 4.5 && 
+         version != 4.6 &&
+         version != 4.7 
+         ) 
+        {
         console.log('Version not present');
       } else if (fs.existsSync(`/opt/openshift/${version}`)) {
         console.log('Command-line input received:');
