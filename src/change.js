@@ -29,8 +29,7 @@ function change(callback) {
          version != 4.3 && 
          version != 4.4 && 
          version != 4.5 && 
-         version != 4.6 &&
-         version != 4.7 
+         version != 4.6
          ) 
         {
         console.log('Version not present');
