@@ -30,9 +30,9 @@ const extract_oc = function (callback) {
           version != '4.3' && 
           version != '4.4'&& 
           version != '4.5' && 
-          version != '4.6' && 
-          version != '4.7'
-          ) {
+          version != '4.6'
+          ) 
+        {
           const versionpath = `./${version}/${ocpath}${version}*/*`;
           exec(`mv ${versionpath} ./${version}`);
           exec(`${'rm -rf ./'}${version}/${ocpath}${version}*`);
