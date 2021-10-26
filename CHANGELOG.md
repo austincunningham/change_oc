@@ -16,6 +16,8 @@ Date format YYYY-MM-DD
 
 ## [Unreleased]
 - ...
+## [0.0.35] 2021-26-10
+- rollback 4.7 binary support
 ## [0.0.34] 2021-19-10
 - Add 4.7 binary support
 ## [0.0.33] 2021-26-05
